@@ -111,7 +111,7 @@ let largeNumbers = ({ first, second, third }) => {
 */
 
 //Code Here
-let numberGroups = ({a,b,c}) => {
-  
+let numberGroups = ({ a, b, c }) => {
+
 }
 

@@ -44,13 +44,24 @@ var employees = [
 // Do not edit the code above.
 
 /*
-  Create a function called 'employeeUpdater' that takes no parameters. employeeUpdater will loop over the array above and perform the following:
+  Create a function called 'employeeUpdater' that takes no parameters. 
+  employeeUpdater will loop over the array above and perform the following:
     1. If employee's first name is Theo, remove that employee because he just got fired.
     2. If the employee's first name is Lorie, change her department to 'HR'.
     3. Return the updated employee array.
 */
 
 //Code Here
+let employeeUpdater = () => {
+  for (var i in employees) {
+    if (employees[i].firstName == "Theo") {
+      delete employees[i]
+    } else if (employees[i].firstName == "Lorie") {
+      employees[i].department = "HR"
+    }
+  }
+  return employees
+}
 
 
 
@@ -69,7 +80,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-
+let removeDuplicates = (workplaceAccidents) => {
+  let newArr = [];
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    if (newArr.indexOf(workplaceAccidents[i]) == -1) {
+      newArr.push(workplaceAccidents[i])
+    }
+  }
+  return newArr
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -81,7 +100,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -97,10 +116,8 @@ var cat = {
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
-
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 ////////// PROBLEM 4 //////////
 
@@ -139,13 +156,18 @@ var myCar = {
 */
 
 //Code Here
-
+let recordCleaner = () => {
+  let arr = myCar.accidents
+  for (const i in arr) {
+    arr[i].atFaultForAccident = false
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [[1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 // Do not edit the code above.
 
 /*
@@ -158,5 +180,15 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-
-
+let looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 == 0) {
+        numsArr[i][j] = 'even'
+      } else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr
+}

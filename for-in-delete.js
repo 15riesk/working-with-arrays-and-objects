@@ -202,13 +202,9 @@ let startsWithK = (obj) => {
 
 let hiddenTreasure = (obj) => {
   for (const key in obj) {
-    if (key.includes("treasure")) {
-
-    }
-    else{
+    if (!obj[key].includes("treasure")) {
       delete obj[key]
     }
   }
   return obj
 }
-
